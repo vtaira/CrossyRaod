@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Game {
-    GameView window = new GameView();
-    Player p = new Player();
-    ArrayList<Row> rows = new ArrayList<>();
+    GameView window;
+    Player p;
+    ArrayList<Row> rows;
 
     public Game( ){
 

@@ -8,6 +8,9 @@ public class Obstacles {
     int width;
     Image image;
 
+    public Obstacles(){
+
+    }
     public int getLocX(){
         return locX;
     }

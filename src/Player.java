@@ -7,6 +7,10 @@ public class Player {
     int width;
     Image character;
 
+    public Player(){
+
+    }
+
     public void move(){
 
     }

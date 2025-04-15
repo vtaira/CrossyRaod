@@ -4,6 +4,10 @@ public class Row {
     int location;
     ArrayList<Obstacles> obstacles;
 
+    public Row(){
+
+    }
+
     public void update(){
 
     }
