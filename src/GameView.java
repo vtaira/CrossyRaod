@@ -6,10 +6,14 @@ public class GameView extends JFrame {
     private Game game;
     private int WINDOW_WIDTH = 900;
    private int WINDOW_HEIGHT = 700;
+   private Background background;
+   private Player p;
 
 
 
    public GameView(Game game){
+       this.p = new Player(this);
+       this.background = new Background(this);
        this.game = game;
        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
        this.setTitle("The Aquarium");
@@ -20,9 +24,8 @@ public class GameView extends JFrame {
 
     }
     public void paint(Graphics g){
-        for(Row row : game.rows){
-            row.draw(g);
-        }
+        background.draw(g);
+        p.draw(g);
 
     }
 }
