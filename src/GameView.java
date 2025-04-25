@@ -4,15 +4,14 @@ import java.awt.event.ActionEvent;
 
 public class GameView extends JFrame {
     private Game game;
-    private int WINDOW_WIDTH = 900;
-   private int WINDOW_HEIGHT = 700;
+    public static int WINDOW_WIDTH = 900;
+   public static int WINDOW_HEIGHT = 700;
    private Background background;
    private Player p;
 
 
 
    public GameView(Game game){
-       this.p = new Player(this);
        this.background = new Background(this);
        this.game = game;
        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -25,7 +24,7 @@ public class GameView extends JFrame {
     }
     public void paint(Graphics g){
         background.draw(g);
-        p.draw(g);
+        game.getPlayer().draw(g);
 
     }
 }
