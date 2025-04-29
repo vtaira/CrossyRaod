@@ -5,12 +5,10 @@ import java.awt.*;
 import static java.awt.SystemColor.window;
 
 public class Player {
-    private int locX = 350;
+    private int locX = 375;
     private int locY = 620;
     private int height = 80;
     private int width = 110;
-    private int midHeight = 40;
-    private int midWidth = 55;
     private Image character;
 
     public Player() {
@@ -22,12 +20,12 @@ public class Player {
 
     }
 
-    public void moveX(int xShift, int min, int max) {
-        if(locX - midWidth + xShift <= min && xShift < 0){
-            locX = min + midWidth;
+    public void moveX(Player p, int xShift, int min, int max) {
+        if(locX + xShift < min && xShift < 0){
+            locX = min;
         }
-        else if (locX + midWidth + xShift >= max && xShift > 0){
-            locX = max - midWidth;
+        else if (locX + width + xShift > max && xShift > 0){
+            locX = max - width;
         }
         else{
             locX += xShift;
@@ -35,11 +33,12 @@ public class Player {
 
     }
 
-    public void moveY(int yShift, int min, int max) {
-        if(locY - midHeight + yShift <= min && yShift < 0){
-            locY = min + midHeight;
+    public void moveY(Player p, int yShift, int min, int max) {
+        if(locY + yShift < min && yShift < 0){
+            locY = min;
+            p.resetPosition();
         }
-        else if(locY + height + yShift >= max && yShift > 0){
+        else if(locY + height + yShift > max && yShift > 0){
             locY = max - height;
         }
         else{
@@ -65,7 +64,8 @@ public class Player {
     }
 
     public void resetPosition() {
-
+                locY = 620;
+                locX = 375;
     }
 
     public void draw(Graphics g) {

@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class Background {
     private GameView crossyRoad;
     int location;
-    private ArrayList<Obstacles> obstacles;
+    private ArrayList<Obstacle> obstacles;
     private Image background1;
     private Image background2;
+
 
     public Background(GameView crossyRoad){
         this.crossyRoad = crossyRoad;
@@ -29,7 +30,8 @@ public class Background {
 
     }
     public void draw(Graphics g){
-        g.drawImage(background1, 0, 0, crossyRoad);
+
+           g.drawImage(background1, 0, 0, crossyRoad);
 
     }
 }

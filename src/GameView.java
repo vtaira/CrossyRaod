@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferStrategy;
 
 public class GameView extends JFrame {
     private Game game;
@@ -18,13 +19,18 @@ public class GameView extends JFrame {
        this.setTitle("The Aquarium");
        this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
        this.setVisible(true);
+       this.createBufferStrategy(2);
    }
-    public void actionPerformed(ActionEvent e){
 
-    }
+
+
     public void paint(Graphics g){
-        background.draw(g);
+       super.paint(g);
+       background.draw(g);
         game.getPlayer().draw(g);
+        for(Obstacle obstacle : game.getObstacles()){
+            obstacle.draw(g);
+        }
 
     }
 }
