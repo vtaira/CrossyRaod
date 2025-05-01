@@ -18,29 +18,29 @@ public class Game implements KeyListener, ActionListener{
         p = new Player();
         window = new GameView(this);
         window.addKeyListener(this);
-        window.repaint();
         obstacles = new Obstacle[20];
         obstacleImages = new Image[4];
         for (int i = 0; i < obstacleImages.length; i++){
-            obstacleImages[i] = new ImageIcon("Resources/" + i + ".jpg").getImage();
+            obstacleImages[i] = new ImageIcon("Resources/" + i + ".png").getImage();
         }
         addObstacles();
+        window.repaint();
 
 
     }
     public void addObstacles(){
         for(int i = 0; i < obstacles.length; i ++){
             if(i < 6){
-                obstacles[i] = new Obstacle(5, 600, 50, 50, 2, obstacleImages[0]);
+                obstacles[i] = new Obstacle(5, 600, 75, 75, 2, obstacleImages[0]);
             }
             else if (i >= 6 && i < 11){
-                obstacles[i] = new Obstacle(5, 400, 50, 50, 2, obstacleImages[2]);
+                obstacles[i] = new Obstacle(5, 400, 75, 75, 2, obstacleImages[2]);
             }
            else if (i >= 11 && i < 16){
-               obstacles[i] = new Obstacle(5, 200, 50, 50, 2, obstacleImages[3]);
+               obstacles[i] = new Obstacle(5, 250, 75, 75, 2, obstacleImages[3]);
             }
            else{
-                obstacles[i] = new Obstacle(5, 100, 50, 50, 2, obstacleImages[2]);
+                obstacles[i] = new Obstacle(5, 90, 50, 75, 2, obstacleImages[1]);
             }
         }
     }

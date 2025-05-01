@@ -19,16 +19,6 @@ public class Background {
 
     }
 
-
-    public void update(){
-
-    }
-    public void setObstacles(){
-
-    }
-    public void setRowType(){
-
-    }
     public void draw(Graphics g){
 
            g.drawImage(background1, 0, 0, crossyRoad);

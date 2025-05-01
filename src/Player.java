@@ -47,29 +47,13 @@ public class Player {
 
     }
 
-    public int getLocX() {
-        return locX;
-    }
-
-    public int getLocY() {
-        return locY;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
 
     public void resetPosition() {
-                locY = 620;
-                locX = 375;
+        locY = 620;
+        locX = 375;
     }
 
     public void draw(Graphics g) {
         g.drawImage(character, locX, locY, width, height, null);
     }
-
 }
