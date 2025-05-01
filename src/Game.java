@@ -31,16 +31,20 @@ public class Game implements KeyListener, ActionListener{
     public void addObstacles(){
         for(int i = 0; i < obstacles.length; i ++){
             if(i < 6){
-                obstacles[i] = new Obstacle(5, 600, 75, 75, 2, obstacleImages[0]);
+                int yVal = 510 + (int)(Math.random() * 90);
+                obstacles[i] = new Obstacle(50 * i, yVal, 75, 75, 2, obstacleImages[0]);
             }
             else if (i >= 6 && i < 11){
-                obstacles[i] = new Obstacle(5, 400, 75, 75, 2, obstacleImages[2]);
+               int yVal = 350 + (int)(Math.random() * 90);
+                obstacles[i] = new Obstacle(60 * (i-6), yVal, 75, 75, 2, obstacleImages[2]);
             }
            else if (i >= 11 && i < 16){
-               obstacles[i] = new Obstacle(5, 250, 75, 75, 2, obstacleImages[3]);
+                int yVal = 200 + (int)(Math.random() * 90);
+                obstacles[i] = new Obstacle(70 * (i - 11), yVal, 75, 75, 2, obstacleImages[3]);
             }
            else{
-                obstacles[i] = new Obstacle(5, 90, 50, 75, 2, obstacleImages[1]);
+                int yVal = 40 + (int)(Math.random() * 90);
+                obstacles[i] = new Obstacle(80 * (i - 16), yVal, 50, 75, 2, obstacleImages[1]);
             }
         }
     }
