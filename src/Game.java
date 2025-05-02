@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class Game implements KeyListener, ActionListener{
    private GameView window;
    private Player p;
-   public static final int  stepSize = 10;
+   public static final int  stepSize = 15;
    private Obstacle[] obstacles;
    private Image[] obstacleImages;
 
@@ -18,7 +18,7 @@ public class Game implements KeyListener, ActionListener{
         p = new Player();
         window = new GameView(this);
         window.addKeyListener(this);
-        obstacles = new Obstacle[20];
+        obstacles = new Obstacle[25];
         obstacleImages = new Image[4];
         for (int i = 0; i < obstacleImages.length; i++){
             obstacleImages[i] = new ImageIcon("Resources/" + i + ".png").getImage();
@@ -31,20 +31,20 @@ public class Game implements KeyListener, ActionListener{
     public void addObstacles(){
         for(int i = 0; i < obstacles.length; i ++){
             if(i < 6){
-                int yVal = 510 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(50 * i, yVal, 75, 75, 2, obstacleImages[0]);
+                int yVal = 520 + (int)(Math.random() * 90);
+                obstacles[i] = new Obstacle(120 * i, yVal, 75, 75, 1.7, obstacleImages[0]);
             }
-            else if (i >= 6 && i < 11){
+            else if (i >= 6 && i < 12){
                int yVal = 350 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(60 * (i-6), yVal, 75, 75, 2, obstacleImages[2]);
+                obstacles[i] = new Obstacle(120 * (i-6), yVal, 75, 75, 1.7, obstacleImages[2]);
             }
-           else if (i >= 11 && i < 16){
+           else if (i >= 12 && i < 17){
                 int yVal = 200 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(70 * (i - 11), yVal, 75, 75, 2, obstacleImages[3]);
+                obstacles[i] = new Obstacle(120 * (i - 11), yVal, 75, 75, 1.7, obstacleImages[3]);
             }
-           else{
+           else if (i >= 17 && i < 25){
                 int yVal = 40 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(80 * (i - 16), yVal, 50, 75, 2, obstacleImages[1]);
+                obstacles[i] = new Obstacle(120 * (i - 16), yVal, 50, 75, 1.7, obstacleImages[1]);
             }
         }
     }

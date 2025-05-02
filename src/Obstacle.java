@@ -3,12 +3,12 @@ import java.awt.*;
 public class Obstacle {
     int locX;
     int locY;
-    int speed;
+    double speed;
     int height;
     int width;
     Image image;
 
-    public Obstacle(int locX, int locY, int width, int height, int speed, Image image ){
+    public Obstacle(int locX, int locY, int width, int height, double speed, Image image ){
         this.locX = locX;
         this.locY = locY;
         this.width = width;
@@ -25,7 +25,7 @@ public class Obstacle {
         return locY;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
@@ -39,7 +39,7 @@ public class Obstacle {
 
     public void update(){
         locX += speed;
-        if(locX + width > 800){
+        if(locX + width > 900){
             locX = 0;
         }
     }
