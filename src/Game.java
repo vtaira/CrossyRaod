@@ -32,19 +32,19 @@ public class Game implements KeyListener, ActionListener{
         for(int i = 0; i < obstacles.length; i ++){
             if(i < 6){
                 int yVal = 520 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(120 * i, yVal, 75, 75, 1.7, obstacleImages[0], p);
+                obstacles[i] = new Obstacle(120 * i, yVal, 50, 50, 1.7, obstacleImages[0], p);
             }
             else if (i >= 6 && i < 12){
                int yVal = 350 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(120 * (i-6), yVal, 75, 75, 1.7, obstacleImages[2], p);
+                obstacles[i] = new Obstacle(120 * (i-6), yVal, 50, 50, 1.7, obstacleImages[2], p);
             }
            else if (i >= 12 && i < 17){
                 int yVal = 200 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(120 * (i - 11), yVal, 75, 75, 1.7, obstacleImages[3], p);
+                obstacles[i] = new Obstacle(120 * (i - 11), yVal, 50, 50, 1.7, obstacleImages[3], p);
             }
            else if (i >= 17 && i <= 24){
                 int yVal = 40 + (int)(Math.random() * 90);
-                obstacles[i] = new Obstacle(120 * (i - 16), yVal, 50, 75, 1.7, obstacleImages[1], p);
+                obstacles[i] = new Obstacle(120 * (i - 16), yVal, 40, 60, 1.7, obstacleImages[1], p);
             }
         }
     }
@@ -53,6 +53,12 @@ public class Game implements KeyListener, ActionListener{
         return p;
     }
 
+
+    public void checkDuck(){
+        // go through all obstacles and see if they're touching duck
+            // if yes
+                // reset duck position
+    }
 
     public boolean isOver(){
         return false;

@@ -42,12 +42,6 @@ public class Obstacle {
 
     public void update(){
         locX += speed;
-        if(locX == duck.getLocX()){
-            duck.resetPosition();
-        }
-        if(locY == duck.getLocY()){
-            duck.resetPosition();
-        }
         if(locX + width > 900){
             locX = 0;
         }

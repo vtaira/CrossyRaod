@@ -7,8 +7,8 @@ import static java.awt.SystemColor.window;
 public class Player {
     private int locX = 375;
     private int locY = 640;
-    private int height = 70;
-    private int width = 85;
+    private int height = 60;
+    private int width = 70;
     private Image character;
 
     public Player() {
