@@ -1,20 +1,23 @@
 import java.awt.*;
 
 public class Obstacle {
-    int locX;
-    int locY;
-    double speed;
-    int height;
-    int width;
-    Image image;
+   private int locX;
+  private  int locY;
+   private double speed;
+   private int height;
+   private int width;
+  private  Image image;
+  private Player duck;
 
-    public Obstacle(int locX, int locY, int width, int height, double speed, Image image ){
+
+    public Obstacle(int locX, int locY, int width, int height, double speed, Image image, Player duck ){
         this.locX = locX;
         this.locY = locY;
         this.width = width;
         this.height = height;
         this.speed = speed;
         this.image = image;
+        this.duck = duck;
 
     }
     public int getLocX(){
@@ -39,6 +42,12 @@ public class Obstacle {
 
     public void update(){
         locX += speed;
+        if(locX == duck.getLocX()){
+            duck.resetPosition();
+        }
+        if(locY == duck.getLocY()){
+            duck.resetPosition();
+        }
         if(locX + width > 900){
             locX = 0;
         }
